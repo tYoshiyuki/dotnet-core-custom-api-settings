@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace WebApi2ToCore
@@ -22,7 +19,8 @@ namespace WebApi2ToCore
                         continue;
                     }
 
-                    var template = controller.ControllerType.Namespace.Replace("WebApi2ToCore.Controllers", "")
+                    var template = controller.ControllerType.Namespace
+                                       .Replace("WebApi2ToCore.Controllers", "")
                                        .Replace('.', '/') + "/[controller]/[action]";
                     Debug.WriteLine($"Template is {template}.");
 
